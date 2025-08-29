@@ -1,11 +1,5 @@
 # Extending Dino U-Net
 
-> Authors: Yifan Gao, Haoyue Li, Feng Yuan, Xiaosong Wang*, and Xin Gao*  
-> 1 University of Science and Technology of China, Hefei, China  
-> 2 Shanghai Innovation Institute, Shanghai, China  
-> 3 Shanghai Artificial Intelligence Laboratory, Shanghai, China  
-> *Corresponding author
-
 This guide explains how to extend and customize Dino U-Net for your research. The design follows a clean API similar to our simplified nnU-Net wrapper: customize the trainer's network-building method without changing initialization logic.
 
 - Do NOT override `__init__` in trainer classes.

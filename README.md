@@ -135,7 +135,7 @@ After training, the script automatically proceeds to the evaluation phase. It wi
 
 ## Extending Dino U-Net
 
-See the full extension guide here: [assets/extending.md](./assets/extending.md) · [中文扩展指南](./assets/extending_zh.md)
+See the full extension guide here: [extending-dinounet](./assets/extending.md) · [中文扩展指南](./assets/extending_zh.md)
 
 ## Citation
 
@@ -154,5 +154,5 @@ If you find this work useful in your research, please consider citing our paper:
 ## Acknowledgements
 
 We gratefully acknowledge the following open-source projects that our work builds upon:
-- nnU-Net: Universal self-adapting framework for U-Net-based medical image segmentation ([docs](https://github.com/MIC-DKFZ/nnUNet), [dataset format](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md)).
-- DINOv3: Self-supervised Vision Transformers and code base utilized as our encoder backbone ([repo](https://github.com/facebookresearch/dinov3)).
+- nnU-Net ([docs](https://github.com/MIC-DKFZ/nnUNet), [dataset format](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md)).
+- DINOv3 ([repo](https://github.com/facebookresearch/dinov3)).

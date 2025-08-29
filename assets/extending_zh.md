@@ -1,11 +1,5 @@
 # 扩展开发 Dino U-Net（中文）
 
-> 作者：Yifan Gao, Haoyue Li, Feng Yuan, Xiaosong Wang*，Xin Gao*  
-> 1 中国科学技术大学（合肥）  
-> 2 上海创新研究院（上海）  
-> 3 上海人工智能实验室（上海）  
-> *通讯作者
-
 [English](./extending.md)
 
 本文档介绍如何在保持训练流程稳定的前提下，优雅地扩展与自定义 Dino U-Net。核心思路是：仅在 Trainer 中定制“构建网络”的方法，避免改动初始化逻辑，从而最大化复用现有管线。

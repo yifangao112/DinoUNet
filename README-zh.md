@@ -4,6 +4,7 @@
 
 这是 Dino U-Net 的官方实现：一种在 U-Net 架构中集成 DINOv3 预训练模型的医学图像分割框架。通过利用 DINOv3 的高保真密集特征，Dino U-Net 在多种医学影像任务上取得优异表现。
 
+![Teaser image](./assets/dinounet.jpg)
 > 论文：**[Dino U-Net: Exploiting High-Fidelity Dense Features from Foundation Models for Medical Image Segmentation](https://arxiv.org/pdf/2508.20909)**
 > <br>作者：Yifan Gao, Haoyue Li, Feng Yuan, Xiaosong Wang*, Xin Gao*<br>
 > 1 中国科学技术大学<br> 2 上海创智学院<br> 3 上海人工智能实验室<br>
@@ -88,5 +89,5 @@ python dinounet_training.py --gpuid 0 --model dinounet_s --datasetid 9 --epoch 2
 ```
 
 ## 致谢
-- nnU-Net：通用、可自适应的医学图像分割框架（[项目主页](https://github.com/MIC-DKFZ/nnUNet)｜[数据格式](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md)）
-- DINOv3：自监督视觉 Transformer 及其实现（[项目仓库](https://github.com/facebookresearch/dinov3)）
+- nnU-Net（[项目主页](https://github.com/MIC-DKFZ/nnUNet)｜[数据格式](https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md)）
+- DINOv3（[项目仓库](https://github.com/facebookresearch/dinov3)）
