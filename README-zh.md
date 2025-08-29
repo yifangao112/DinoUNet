@@ -6,10 +6,7 @@
 
 > 论文：**[Dino U-Net: Exploiting High-Fidelity Dense Features from Foundation Models for Medical Image Segmentation](https://arxiv.org/pdf/2508.20909)**
 > <br>作者：Yifan Gao, Haoyue Li, Feng Yuan, Xiaosong Wang*, Xin Gao*<br>
-> 1 中国科学技术大学, 合肥, 中国<br>
-> 2 上海创新研究院, 上海, 中国<br>
-> 3 上海人工智能实验室, 上海, 中国<br>
-> *通讯作者
+> 1 中国科学技术大学<br> 2 上海创智学院<br> 3 上海人工智能实验室<br>
 
 ## 特性
 - **基础模型编码器**：采用 DINOv3 作为高保真特征提取器
