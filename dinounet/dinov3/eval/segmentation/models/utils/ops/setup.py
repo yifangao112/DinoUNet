@@ -40,6 +40,7 @@ def get_extensions():
     define_macros = []
 
     if torch.cuda.is_available() and CUDA_HOME is not None:
+    # NVIDIA CUDA path
         extension = CUDAExtension
         sources += source_cuda
         define_macros += [("WITH_CUDA", None)]
@@ -50,7 +51,10 @@ def get_extensions():
             "-D__CUDA_NO_HALF2_OPERATORS__",
         ]
     else:
-        raise NotImplementedError("Cuda is not availabel")
+        # CPU-only fallback (ROCm-safe)
+        extension = CppExtension
+        print("⚠️  CUDA not available — building CPU-only MultiScaleDeformableAttention")
+    
 
     sources = [os.path.join(extensions_dir, s) for s in sources]
     include_dirs = [extensions_dir]
