@@ -6,8 +6,6 @@ This is the official repository for Dino U-Net: Exploiting High-Fidelity Dense F
 
 ![Teaser image](./assets/dinounet.jpg)
 > **[Dino U-Net: Exploiting High-Fidelity Dense Features from Foundation Models for Medical Image Segmentation.](https://arxiv.org/pdf/2508.20909)**
-> <br>Yifan Gao, Haoyue Li, Feng Yuan, Xiaosong Wang*, and Xin Gao*<br>
-> 1 University of Science and Technology of China<br> 2 Shanghai Innovation Institute<br> 3 Shanghai Artificial Intelligence Laboratory<br>
 
 This repository contains the official implementation of **Dino U-Net**, a novel architecture for medical image segmentation that integrates a pre-trained DINOv3 foundation model within U-Net architecture. By leveraging the high-fidelity dense features from DINOv3, Dino U-Net achieves state-of-the-art performance on various medical image segmentation tasks.
 
