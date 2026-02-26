@@ -137,20 +137,6 @@ After training, the script automatically proceeds to the evaluation phase. It wi
 
 See the full extension guide here: [extending-dinounet](./assets/extending.md) · [中文扩展指南](./assets/extending_zh.md)
 
-## Citation
-
-If you find this work useful in your research, please consider citing our paper:
-
-```bibtex
-@article{gao2025dino,
-  title={Dino U-Net: Exploiting High-Fidelity Dense Features from Foundation Models for Medical Image Segmentation},
-  author={Gao, Yifan and Li, Haoyue and Yuan, Feng and Wang, Xiaosong and Gao, Xin},
-  journal={arXiv preprint arXiv:2508.20909},
-  year={2025},
-  url={https://arxiv.org/pdf/2508.20909}
-}
-```
-
 ## Acknowledgements
 
 We gratefully acknowledge the following open-source projects that our work builds upon:
