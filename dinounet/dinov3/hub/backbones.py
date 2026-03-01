@@ -125,9 +125,8 @@ def _make_dinov3_vit(
     vit_kwargs.update(**kwargs)
     model = DinoVisionTransformer(**vit_kwargs)
     if pretrained:
-        if type(weights) is Weights and weights not in {Weights.LVD1689M, Weights.SAT493M}:
-            raise ValueError(f"Unsupported weights for the backbone: {weights}")
-        elif type(weights) is Weights:
+        if isinstance(weights, Weights):
+            # default Meta-hosted weights (NOT usable for you)
             url = _make_dinov3_vit_model_url(
                 patch_size=patch_size,
                 compact_arch_name=compact_arch_name,
@@ -135,12 +134,21 @@ def _make_dinov3_vit(
                 weights=weights,
                 hash=hash,
             )
-        else:
-            url = convert_path_or_url_to_url(weights)
-        state_dict = torch.hub.load_state_dict_from_url(url, map_location="cpu", check_hash=check_hash)
+            raise RuntimeError(
+                f"Remote download blocked. Please pass a local .pth path instead of weights={weights}"
+            )
+
+        # ---- LOCAL PATH CASE (THIS IS WHAT YOU WANT) ----
+        if not os.path.isfile(weights):
+            raise FileNotFoundError(f"DINOv3 weights not found at: {weights}")
+
+        print(f"✅ Loading DINOv3 weights from local file:\n   {weights}")
+        state_dict = torch.load(weights, map_location="cpu")
         model.load_state_dict(state_dict, strict=True)
+
     else:
         model.init_weights()
+        
     return model
 
 

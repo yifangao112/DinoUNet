@@ -48,7 +48,7 @@ DINOv3_MODEL_INFO = {
 }
 
 
-def load_dinov3_model(model_name: str, pretrained_path: str = None) -> DinoVisionTransformer:
+'''def load_dinov3_model(model_name: str, pretrained_path: str = None) -> DinoVisionTransformer:
     """Load DINOv3 model with pretrained weights"""
     
     if model_name not in DINOv3_MODEL_FACTORIES:
@@ -72,6 +72,37 @@ def load_dinov3_model(model_name: str, pretrained_path: str = None) -> DinoVisio
         model = model_factory(pretrained=True)
         print("Successfully loaded default pretrained weights")
 
+    return model
+'''    
+def load_dinov3_model(model_name: str, pretrained_path: str = None) -> DinoVisionTransformer:
+    """Load DINOv3 model with pretrained weights (local only)"""
+
+    if model_name not in DINOv3_MODEL_FACTORIES:
+        supported_models = list(DINOv3_MODEL_FACTORIES.keys())
+        raise ValueError(
+            f"Unsupported model: {model_name}. Supported models: {supported_models}"
+        )
+
+    model_factory = DINOv3_MODEL_FACTORIES[model_name]
+
+    # Never allow remote download
+    assert pretrained_path is not None, (
+        "Remote downloads are disabled. "
+        "You must provide a local pretrained_path (.pth file)."
+    )
+    assert os.path.isfile(pretrained_path), (
+        f"Checkpoint not found: {pretrained_path}"
+    )
+
+    print(f"Loading DINOv3 weights from local path: {pretrained_path}")
+
+    # THIS is the key line
+    model = model_factory(
+        pretrained=True,
+        weights=pretrained_path,   # <-- tells DINOv3 to load locally
+    )
+
+    print("Successfully loaded local pretrained weights")
     return model
 
 
@@ -927,7 +958,7 @@ class DinoUNetTrainer_7b(DinoUNetTrainer):
     - Largest available model
     """
     _dinov3_model_name = "dinounet_7b"
-    _dinov3_pretrained_path = "dinounet/checkpoints/dinov3_vit7b16_pretrain_lvd1689m-a955f4ea.pth"
+    _dinov3_pretrained_path = "/shared-docker/DinoUNet/checkpoints/dinov3_vit7b16_pretrain_lvd1689m-a955f4ea.pth"
 
 
 
